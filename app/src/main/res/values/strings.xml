@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Animate</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="label_blink">Blink</string>
+    <string name="label_clockwise">Clockwise</string>
+    <string name="label_move">Move</string>
+    <string name="label_slide">Slide Up</string>
+    <string name="label_zoom">Zoom</string>
+    <string name="label_bounce">Bounce</string>
+
+
+</resources>
