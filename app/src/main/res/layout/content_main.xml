@@ -14,73 +14,73 @@
 
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:src="@mipmap/ic_launcher"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:src="@mipmap/ic_launcher" />
 
     <Button
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/label_zoom"
-        android:id="@+id/button"
-        android:layout_below="@+id/imageView"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView"
         android:layout_marginTop="40dp"
         android:onClick="zoom"
-        android:layout_alignParentEnd="true" />
+        android:text="@string/label_zoom" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/label_clockwise"
         android:id="@+id/button2"
-        android:onClick="clockwise"
-        android:layout_below="@+id/button"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/label_blink"
-        android:onClick="blink"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button"
+        android:onClick="clockwise"
+        android:text="@string/label_clockwise" />
+
+    <Button
         android:id="@+id/button3"
-        android:layout_below="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/button2"
+        android:onClick="blink"
+        android:text="@string/label_blink" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/label_move"
-        android:onClick="move"
         android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/button3"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:onClick="move"
+        android:text="@string/label_move" />
 
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/label_slide"
-        android:onClick="slide"
         android:id="@+id/button5"
-        android:layout_below="@+id/button4"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
-
-    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/label_bounce"
-        android:onClick="bounce"
-        android:id="@+id/button6"
-        android:layout_below="@+id/button5"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/button4"
+        android:onClick="slide"
+        android:text="@string/label_slide" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/button5"
+        android:onClick="bounce"
+        android:text="@string/label_bounce" />
 
 </RelativeLayout>
