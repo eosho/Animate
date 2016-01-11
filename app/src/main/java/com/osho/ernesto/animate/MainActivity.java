@@ -1,5 +1,6 @@
 package com.osho.ernesto.animate;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -25,11 +26,22 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Snackbar.make(view, "Contact Me", Snackbar.LENGTH_LONG)
-                       .setAction("Email", null).show();*/
-            }
-        });
+                Snackbar.make(view, "Contact Me", Snackbar.LENGTH_LONG)
+                        .setAction("Email", null).show();
+
+                Intent Email = new Intent(Intent.ACTION_SEND);
+                Email.setType("text/email");
+                Email.putExtra(Intent.EXTRA_EMAIL,
+                        new String[]{"fumesbond@gmail.com"});  //developer 's email
+                Email.putExtra(Intent.EXTRA_SUBJECT,
+                        "Add your Subject"); // Email 's Subject
+                Email.putExtra(Intent.EXTRA_TEXT, "Dear Dev," + "");  //Email 's Greeting text
+                startActivity(Intent.createChooser(Email, "Send Feedback:"));
+        }
     }
+
+    );
+}
 
     // Animation code
     public void clockwise(View view) {
