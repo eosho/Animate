@@ -1,17 +1,23 @@
 package com.osho.ernesto.animate;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.method.LinkMovementMethod;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,14 +35,14 @@ public class MainActivity extends AppCompatActivity {
                 Snackbar.make(view, "Contact Me", Snackbar.LENGTH_LONG)
                         .setAction("Email", null).show();
 
-                Intent Email = new Intent(Intent.ACTION_SEND);
-                Email.setType("text/email");
-                Email.putExtra(Intent.EXTRA_EMAIL,
-                        new String[]{"fumesbond@gmail.com"});  //developer 's email
-                Email.putExtra(Intent.EXTRA_SUBJECT,
-                        "Add your Subject"); // Email 's Subject
-                Email.putExtra(Intent.EXTRA_TEXT, "Dear Dev," + "");  //Email 's Greeting text
-                startActivity(Intent.createChooser(Email, "Send Feedback:"));
+                // Send email to developer
+
+                Intent intent = new Intent(Intent.ACTION_SENDTO);
+                intent.setData(Uri.parse("mailto:"));
+                intent.putExtra(Intent.EXTRA_EMAIL  , new String[] { "fumesbond@gmail.com" });
+                intent.putExtra(Intent.EXTRA_SUBJECT, "Enter Subject");
+
+                startActivity(Intent.createChooser(intent, "Email via..."));
         }
     }
 
@@ -125,9 +131,27 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        /*if (id == R.id.action_settings) {
-            return true;
-        }*/
+        if (id == R.id.action_about) {
+            AlertDialog.Builder dlgAlert = new AlertDialog.Builder(this);
+            final TextView title = new TextView(this);
+            title.setMovementMethod(LinkMovementMethod.getInstance());
+            title.setText(R.string.about_body);
+            title.setGravity(Gravity.CENTER);
+
+            dlgAlert.setView(title);
+            dlgAlert.setTitle("About");
+            dlgAlert.setIcon(R.drawable.ic_account_outline_black_24dp); // default for now
+            dlgAlert.setPositiveButton("EXIT",
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            //dismiss the dialog
+                        }
+                    });
+            dlgAlert.setCancelable(true);
+            dlgAlert.create().show();
+        }
+
+
 
         return super.onOptionsItemSelected(item);
     }
