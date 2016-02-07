@@ -8,5 +8,12 @@
     <string name="label_slide">Slide Up</string>
     <string name="label_zoom">Zoom</string>
     <string name="label_bounce">Bounce</string>
-
+    <string name="action_about">About</string>
+    <string name="about_body">
+        <br>\nAnimate, a sample app designed by <b>Ernest Oshokoya</b>.\n</br>
+        <n>\n
+        <a href="http://fumes007.github.io\">Website</a>
+        <a href="https://google.com/+ErnestOsho\">Google+</a>
+        <a href="https://github.com/fumes007\">GitHub</a></n></string>
+\
 </resources>
