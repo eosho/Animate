@@ -1,10 +1,12 @@
 <menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.osho.ernesto.animate.MainActivity">
 
-    <!--<item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
--->
+    <item
+        android:id="@+id/action_about"
+        android:icon="@drawable/ic_account_outline_white_24dp"
+        android:title="@string/action_about"
+        android:textSize="20sp"
+        app:showAsAction="ifRoom|collapseActionView" />
 </menu>
